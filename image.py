@@ -19,12 +19,14 @@ height=240
 filename=sys.argv[1].split('.',1)[0];
 if(int(sys.argv[2])==1):
 	file = open("trueimg.h","w")
+	file.write("const u16 trueimg["+str(width*height)+"] = {");
 elif(int(sys.argv[2])==2):
 	file = open("falseimg.h","w")
+	file.write("const u16 flaseimg["+str(width*height)+"] = {");
 else:
 	file = open("waitimg.h","w")
+	file.write("const u16 waitimg["+str(width*height)+"] = {");
 
-file.write("const u16 "+filename+"["+str(width*height)+"] = {");
 
 im=i.resize((width,height), Image.NEAREST) # https://www.daniweb.com/software-development/python/code/216637/resize-an-image-python
 pixels = im.load()
