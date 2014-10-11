@@ -19,8 +19,10 @@ height=240
 filename=sys.argv[1].split('.',1)[0];
 if(int(sys.argv[2])==1):
 	file = open("trueimg.h","w")
-else:
+elif(int(sys.argv[2])==2):
 	file = open("falseimg.h","w")
+else:
+	file = open("waitimg.h","w")
 
 file.write("const u16 "+filename+"["+str(width*height)+"] = {");
 
@@ -40,7 +42,9 @@ for x in range(width):
 file.write("};")
 if(int(sys.argv[2])==1):
 	print("trueimg.h is successfully created!")
-else:
+elif(int(sys.argv[2])==2):
 	print("falseimg.h is successfully created!")
+else:
+	print("waitimg.h is successfully created!")
 file.close()
 
