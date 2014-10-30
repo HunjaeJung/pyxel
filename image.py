@@ -22,7 +22,7 @@ if(int(sys.argv[2])==1):
 	file.write("const u16 trueimg["+str(width*height)+"] = {");
 elif(int(sys.argv[2])==2):
 	file = open("falseimg.h","w")
-	file.write("const u16 flaseimg["+str(width*height)+"] = {");
+	file.write("const u16 falseimg["+str(width*height)+"] = {");
 else:
 	file = open("waitimg.h","w")
 	file.write("const u16 waitimg["+str(width*height)+"] = {");
